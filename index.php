@@ -6,7 +6,7 @@
 <body>
 
 <h2>Enter Borrower Details</h2>
-<form action="insert.php" method="post">
+<form action="insert_customer.php" method="post">
     <label for="name">Name:</label><br>
     <input type="text" id="name" name="name" required><br>
 
