@@ -25,8 +25,22 @@ if (isset($_GET['id']) && $_GET['id'] !==0){
 
 <body>
 
-<a href="add_item.php?name=<?php echo $name; ?>&id=<?php echo $id;?>">add</a>
-<h2><?php echo $name; ?>&nbsp;&nbsp;&nbsp;<?php echo $totalPrice; ?></h2><br><br>
+<a class="btn btn-secondary" href="add_item.php?name=<?php echo $name; ?>&id=<?php echo $id;?>">add</a>
+
+<a class="btn btn-primary" href="retriev_price_detail.php?name=<?php echo $name; ?>&id=<?php echo $id;?>">See Previous detail</a>
+
+<h2><?php echo $name; ?>&nbsp;&nbsp;&nbsp;<?php echo $totalPrice; ?></h2><br>
+<form action="insert_wasool.php" method="post">
+  
+<input type="text" value="<?php echo $id; ?>" name="customer_id">
+<input type="text" placeholder="wasool" name="wasool_price">
+<input type="text" value="<?php echo $totalPrice; ?>" name="total_price">
+<input type="text" value="<?php  ?>" name="bakaya_price">
+
+
+<input type="submit" value="wasool">
+</form>
+<br>
 <table class="table">
   <thead>
     <tr>
