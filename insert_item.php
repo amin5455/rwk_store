@@ -11,7 +11,11 @@ $customer_id = $_POST['customer_id'];
 $sql = "INSERT INTO customer_detail (item, price,customer_id) VALUES ('$name', '$contact','$customer_id')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    ?>
+    <script>
+        window.location.href="retriev_detail.php";
+    </script>
+    <?php
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

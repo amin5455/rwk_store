@@ -19,26 +19,28 @@ if (isset($_GET['id']) && $_GET['id'] !==0){
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Enter Borrower Details</title>
+    <title>RWK</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     </head>
 
 <body>
+<div class="container mt-5">
 
-<a class="btn btn-secondary" href="add_item.php?name=<?php echo $name; ?>&id=<?php echo $id;?>">add</a>
 
-<a class="btn btn-primary" href="retriev_price_detail.php?name=<?php echo $name; ?>&id=<?php echo $id;?>">See Previous detail</a>
+<a class="btn btn-primary" href="add_item.php?name=<?php echo $name; ?>&id=<?php echo $id;?>">add</a>
+
+<a class="btn btn-success" href="retriev_price_detail.php?name=<?php echo $name; ?>&id=<?php echo $id;?>">See Previous detail</a><br><br>
 
 <h2><?php echo $name; ?>&nbsp;&nbsp;&nbsp;<?php echo $totalPrice; ?></h2><br>
 <form action="insert_wasool.php" method="post">
   
-<input type="text" value="<?php echo $id; ?>" name="customer_id">
-<input type="text" placeholder="wasool" name="wasool_price">
-<input type="text" value="<?php echo $totalPrice; ?>" name="total_price">
-<input type="text" value="<?php  ?>" name="bakaya_price">
+<input type="hidden" value="<?php echo $id; ?>" name="customer_id">
+<input type="text" class="form-control w-25 d-inline" placeholder="wasool" name="wasool_price">
+<input type="hidden" value="<?php echo $totalPrice; ?>" name="total_price">
+<input type="hidden" value="<?php  ?>" name="bakaya_price">
 
 
-<input type="submit" value="wasool">
+<input type="submit" class="btn btn-dark" value="wasool">
 </form>
 <br>
 <table class="table">
@@ -82,5 +84,6 @@ else {
 $conn->close();
 
 ?>
+</div>
 </body>
 </html>

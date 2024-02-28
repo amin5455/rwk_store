@@ -31,9 +31,14 @@ $sql = "INSERT INTO customer_detail (item, price,customer_id) VALUES ('$item', $
 $conn->query($price_detail);
 $conn->query($del);
 $conn->query($sql);
-// if ($conn->query($sql) === TRUE) {
-    echo "successfully wasool";
-// } else {
+if ($conn->query($sql) === TRUE) {
+    ?>
+    <script>
+      window.location.href="retriev_detail.php";
+    </script>
+    <?php
+} 
+//else {
 //     echo "Error: " . $sql . "<br>" . $conn->error;
 // }
 
